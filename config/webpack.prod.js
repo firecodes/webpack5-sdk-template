@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { merge } = require('webpack-merge')
 
 const paths = require('./paths')
@@ -9,7 +10,7 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: false,
   output: {
-    path: paths.build,
+    path: paths.dist,
     publicPath: '/',
     // filename: 'js/[name].[contenthash].bundle.js',
     filename: "sdk.client.min.js",
@@ -39,6 +40,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({
       // filename: 'styles/[name].[contenthash].css',

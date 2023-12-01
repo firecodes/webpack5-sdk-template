@@ -10,7 +10,7 @@ module.exports = {
 
   // Where webpack outputs the assets and bundles
   output: {
-    path: paths.build,
+    path: paths.dist,
     filename: "sdk.client.js",
     // filename: '[name].bundle.js',
     publicPath: '/',
@@ -22,7 +22,6 @@ module.exports = {
   // Customize the webpack build process
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
-    new CleanWebpackPlugin(),
 
     // Copies files from target to destination folder
     // new CopyWebpackPlugin({

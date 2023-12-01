@@ -7,6 +7,8 @@ module.exports = {
   // Production build files
   build: path.resolve(__dirname, '../dist'),
 
+  dist: path.resolve(__dirname, '../dist'),
+
   distjs: path.resolve(__dirname, '../distjs'),
 
   distNode: path.resolve(__dirname, '../distNode'),
