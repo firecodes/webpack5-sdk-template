@@ -11,7 +11,12 @@ module.exports = merge(common, {
   output: {
     path: paths.build,
     publicPath: '/',
-    filename: 'js/[name].[contenthash].bundle.js',
+    // filename: 'js/[name].[contenthash].bundle.js',
+    filename: "sdk.client.min.js",
+
+    library: "sdkClient",
+    libraryTarget: "umd",
+    globalObject: "self",
   },
   module: {
     rules: [
@@ -36,17 +41,18 @@ module.exports = merge(common, {
   plugins: [
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
+      // filename: 'styles/[name].[contenthash].css',
+      filename: 'sdk.client.min.css',
       chunkFilename: '[id].css',
     }),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin(), '...'],
-    runtimeChunk: {
-      name: 'runtime',
-    },
-  },
+  // optimization: {
+  //   minimize: true,
+  //   minimizer: [new CssMinimizerPlugin(), '...'],
+  //   runtimeChunk: {
+  //     name: 'runtime',
+  //   },
+  // },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,

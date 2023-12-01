@@ -9,8 +9,8 @@ const banner = `sdk.client v${version}
 (c) 2014-${new Date().getFullYear()} .`;
 
 module.exports = {
-  // entry: "./src/index.js",
-  entry: "./src-js/index.js",
+  entry: "./src/index.js",
+  // entry: "./src-js/index.js",
   // entry: "./src-ts/index.ts",
   // entry: "./dist-build-ts/index.js",  
   output: {

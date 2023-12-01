@@ -11,8 +11,13 @@ module.exports = {
   // Where webpack outputs the assets and bundles
   output: {
     path: paths.build,
-    filename: '[name].bundle.js',
+    filename: "sdk.client.js",
+    // filename: '[name].bundle.js',
     publicPath: '/',
+
+    library: "sdkClient",
+    libraryTarget: "umd",
+    globalObject: "self",
   },
   // Customize the webpack build process
   plugins: [
@@ -45,14 +50,22 @@ module.exports = {
   // Determine how modules within the project are treated
   module: {
     rules: [
-      // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.js$/, use: ['babel-loader'] },
-
       // Images: Copy image files to build folder
       { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
-
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
+      // JavaScript: Use Babel to transpile JavaScript files
+      { test: /\.js$/, use: ['babel-loader'] },
+      {
+        test: /\.m?js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: ["@babel/plugin-transform-object-assign"],
+          },
+        },
+      },
     ],
   },
 

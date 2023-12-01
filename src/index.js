@@ -10,3 +10,11 @@ imageBackground.classList.add('image')
 
 const app = document.querySelector('#root')
 app.append(heading, imageBackground)
+
+import io from 'socket.io-client';
+import * as MediasoupClient from "mediasoup-client";
+export default MediasoupClient;
+export { io };
+window.IO = io
+window.MediasoupClientWindow = MediasoupClient
+console.log("window:", window)

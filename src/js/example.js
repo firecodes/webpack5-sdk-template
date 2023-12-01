@@ -1,3 +1,1 @@
-export const example =
-  () => `Sensible webpack 5 boilerplate using Babel and PostCSS with a hot dev server 
-  and an optimized production build.`
+export const example = () => `sdk 打包代码，看控制台window变量`
