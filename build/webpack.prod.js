@@ -7,15 +7,15 @@ module.exports = {
     filename: "sdk.client.min.js",
   },
   mode: "production",
-  module: {
-    rules: [
-      ...config.module.rules,
-      {
-        test: /\.js$/,
-        loader: "webpack-remove-debug",
-      },
-    ],
-  },
+  // module: {
+  //   rules: [
+  //     ...config.module.rules,
+  //     {
+  //       test: /\.js$/,
+  //       loader: "webpack-remove-debug",
+  //     },
+  //   ],
+  // },
   plugins: [
     ...config.plugins,
     // Extracts CSS into separate files
