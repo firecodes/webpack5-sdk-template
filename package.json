@@ -2,9 +2,18 @@
   "name": "webpack-sdk",
   "version": "1.0.0",
   "description": "webpack sdk.",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "main": "./dist-build-ts/index.js",
+  "types": "./dist-build-ts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./distjs/sdk.client.js": "./distjs/sdk.client.js",
+    "./distjs/sdk.client.js.map": "./distjs/sdk.client.js.map",
+    ".": {
+      "import": "./wrapper.mjs",
+      "require": "./dist-build-ts/index.js"
+    }
+  },
   "author": "liu",
   "license": "MIT",
   "scripts": {

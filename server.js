@@ -3,13 +3,6 @@ const express = require('express');
 const portfinder = require('portfinder');
 const fse = require('fs-extra');
 const shell = require('shelljs');
-// const chalk = require('chalk');
-
-// import express from 'express'
-// import portfinder from 'portfinder'
-// import fse from 'fs-extra'
-// import shell from 'shelljs'
-// import chalk from 'chalk'
 
 module.exports = function start() {
   let dist = 'dist' // distjs | distTs
