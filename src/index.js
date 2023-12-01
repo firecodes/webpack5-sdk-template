@@ -9,7 +9,7 @@ const imageBackground = document.createElement('div')
 imageBackground.classList.add('image')
 
 const app = document.querySelector('#root')
-app.append(heading, imageBackground)
+app && app.append(heading, imageBackground)
 
 import io from 'socket.io-client';
 import * as MediasoupClient from "mediasoup-client";

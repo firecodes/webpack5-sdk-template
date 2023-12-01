@@ -11,3 +11,5 @@ distTs/
 distNode/
 dist-build-ts/
 dev/
+examples/
+gulpfile.js

@@ -5,7 +5,7 @@ heading.textContent = example()
 const imageBackground = document.createElement('div')
 imageBackground.classList.add('image')
 const app = document.querySelector('#root')
-app.append(heading, imageBackground)
+app && app.append(heading, imageBackground)
 
 export function a(name) {
   const temp = `Hello, ${name}!`;
