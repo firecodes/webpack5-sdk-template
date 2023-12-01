@@ -93,6 +93,11 @@ module.exports = {
       //   use: tools.createTsParseUseLoader("ts-loader", createTsConfig())
       // },
       {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'ts-loader',],
+      },
+      {
         test: /\.(sass|scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,

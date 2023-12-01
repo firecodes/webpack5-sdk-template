@@ -1,7 +1,7 @@
 const config = require("./webpack.config");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
-const libraryTarget = "window" // commonjs2 | commonjs | 
+// umd | commonjs2 | commonjs | var | global | module | this
+const libraryTarget = "window"
 
 module.exports = {
   ...config,

@@ -56,6 +56,14 @@ npm run docs:build
 ```
 
 
-
+# 关于模块化(参考链接)
+1. https://www.jianshu.com/p/36c4d4ee65f5
+2. https://blog.csdn.net/qq_17175013/article/details/119753486
+3. https://webpack.docschina.org/configuration/output/#outputlibrary
+# esm, cjs, amd, umd
+1. ES Modules (ESM):
+2. CommonJS (CJS):
+3. AMD (Asynchronous Module Definition):
+4. UMD (Universal Module Definition):
 
 
