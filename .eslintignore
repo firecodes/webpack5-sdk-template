@@ -10,6 +10,7 @@ distjs/
 distTs/
 distNode/
 dist-build-ts/
+dist-examples/
 dev/
 examples/
 gulpfile.js
