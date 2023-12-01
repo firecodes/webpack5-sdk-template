@@ -6,7 +6,8 @@
 
 # 页面链接 (打开浏览器控制台，看window全局变量)
  1. https://firecodes.github.io/webpack5-sdk-template
-
+ 2. https://firecodes.github.io/webpack5-sdk-template/dist/
+ 
 ## 技术
 
 内置 Webpack5 + ES6 + Babel + sass+css

@@ -11,7 +11,7 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.dist,
-    publicPath: '/',
+    publicPath: ',/',
     // filename: 'js/[name].[contenthash].bundle.js',
     filename: "sdk.client.min.js",
 
