@@ -1,8 +1,6 @@
-
-const debug = require("debug")("sdk-client");
-export { debug }
-
-// import * as mediasoupClient from "mediasoup-client";
-// // import debug from 'debug';
-// // export default typescript;
-// export default mediasoupClient;
+import debug from 'debug';
+export { debug };
+import * as modules from './modules';
+export { modules };
+import { Device, detectDevice } from './modules/device';
+export { Device, detectDevice };

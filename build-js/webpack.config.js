@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const version = require("../package.json").version;
-const paths = require('../config/paths')
+const paths = require('../build/paths')
 
 const banner = `sdk.client v${version}
 (c) 2014-${new Date().getFullYear()} .`;

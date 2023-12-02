@@ -18,17 +18,17 @@
   "license": "MIT",
   "scripts": {
     "compile": "rimraf ./dist-build-ts && tsc",
-    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
+    "start": "cross-env NODE_ENV=development webpack serve --config build/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
     "lint": "eslint 'src/**/*.js' || true",
     "prettify": "prettier --write 'src/**/*.js'",
     "server": "gulp server",
     "build:examples": "rimraf dist-examples && gulp build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "build:sdk": "rimraf distjs/* && npm run build:sdk:dev && npm run build:sdk:prod",
-    "build:sdk:dev": "webpack --config ./build/webpack.config.js",
-    "build:sdk:prod": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
+    "build:js:sdk": "rimraf distjs/* && npm run build:sdk:dev && npm run build:sdk:prod",
+    "build:js:sdk:dev": "webpack --config ./build-js/webpack.config.js",
+    "build:js:sdk:prod": "cross-env NODE_ENV=production webpack --config ./build-js/webpack.prod.js",
     "build:ts:sdk": "rimraf distTs/* && npm run build:ts:sdk:dev && npm run build:ts:sdk:prod && npm run build:ts:sdk:all",
     "build:ts:sdk:dev": "webpack --config ./build-ts/webpack.config.js",
     "build:ts:sdk:prod": "cross-env NODE_ENV=production webpack --config ./build-ts/webpack.prod.js",
@@ -43,7 +43,8 @@
     "@babel/polyfill": "^7.12.1",
     "mediasoup-client": "^3.6.69",
     "socket.io-client": "^2.4.0",
-    "webrtc-adapter": "7.5.1"
+    "webrtc-adapter": "7.5.1",
+    "debug": "^4.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
