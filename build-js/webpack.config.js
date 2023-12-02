@@ -8,11 +8,13 @@ const paths = require('../build/paths')
 const banner = `sdk.client v${version}
 (c) 2014-${new Date().getFullYear()} .`;
 
-module.exports = {
-  entry: "./src/index.js",
-  // entry: "./src-js/index.js",
+let entry = "./src/index.js"
+if (process.env.NODE_TS === 'TS') {
   // entry: "./src-ts/index.ts",
-  // entry: "./dist-build-ts/index.js",  
+  entry = "./dist-build-ts/index.js"
+}
+module.exports = {
+  entry: entry,
   output: {
     publicPath: '/',
     path: paths.distjs,

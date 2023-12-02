@@ -2,6 +2,7 @@
 	"compileOnSave": true,
 	"compilerOptions":
 	{
+    "baseUrl": ".",
     "allowJs": false,
 		"lib": [ "es2020", "dom" ],
 		"target": "es2020",
@@ -12,7 +13,23 @@
 		"strict": true,
     "outDir": "./dist-build-ts",
 		"declaration": true,
-		"declarationMap": true
+		"declarationMap": true,
+    "typeRoots": [
+      "./node_modules/@types/",
+      "./types"
+    ],
+    "paths": {
+      "@/*": [
+        "src-ts/*"
+      ],
+      "/#/*": [
+        "types/*"
+      ]
+    }
 	},
-	"include": [ "src-ts"]
+	"include": [
+		 "src-ts",
+		"types/**/*.d.ts",
+		"types/**/*.ts",
+	]
 }
