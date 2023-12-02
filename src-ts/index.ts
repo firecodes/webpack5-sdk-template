@@ -14,3 +14,5 @@ window.IO = io
 window.MediasoupClientWindow = MediasoupClient
 window.console.log("window:", window)
 
+const logDebug = require("debug")("SDK_CLIENT:manager");
+logDebug("window SDK_CLIENT");
