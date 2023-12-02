@@ -18,7 +18,7 @@ async function run() {
       break;
     }
     case 'typescript:build': {
-      installDeps();
+      // installDeps();
       buildTypescript(true);
       replaceVersion();
       break;
@@ -89,11 +89,11 @@ function lint() {
 
 function replaceVersion() {
   logInfo('replaceVersion()');
-  const files = fs.readdirSync('lib', { withFileTypes: true, recursive: true });
+  const files = fs.readdirSync(dist, { withFileTypes: true, recursive: true });
   for (const file of files) {
     if (!file.isFile()) { continue; }
     // NOTE: dirent.path is only available in Node >= 20.
-    const filePath = path.join(file.path ?? 'lib', file.name);
+    const filePath = path.join(file.path ?? dist, file.name);
     const text = fs.readFileSync(filePath, { encoding: 'utf8' });
     const result = text.replace(/__SDK_CLIENT_VERSION__/g, PKG.version);
     fs.writeFileSync(filePath, result, { encoding: 'utf8' });
