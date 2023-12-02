@@ -89,11 +89,17 @@ function lint() {
 
 function replaceVersion() {
   logInfo('replaceVersion()');
-  const files = fs.readdirSync(dist, { withFileTypes: true, recursive: true });
+  // const files = [`${dist}/index.js`, `${dist}/index.d.ts`];
+  //const files = fs.readdirSync(dist, { withFileTypes: true, recursive: true });
+  const files = fs.readdirSync(dist, { withFileTypes: true });
+  logInfo(files);
   for (const file of files) {
-    if (!file.isFile()) { continue; }
+    // logInfo(file.name);
+    if (!file.name || file.isFile && !file.isFile()) { continue; }
     // NOTE: dirent.path is only available in Node >= 20.
     const filePath = path.join(file.path ?? dist, file.name);
+    // const filePath = file
+    logInfo(filePath);
     const text = fs.readFileSync(filePath, { encoding: 'utf8' });
     const result = text.replace(/__SDK_CLIENT_VERSION__/g, PKG.version);
     fs.writeFileSync(filePath, result, { encoding: 'utf8' });
