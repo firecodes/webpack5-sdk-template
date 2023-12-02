@@ -1,7 +1,7 @@
 const { BannerPlugin } = require("webpack");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const version = require("../package.json").version;
-const paths = require('../config/paths')
+const paths = require('../build/paths')
 const tools = require('./tools');
 const createTsConfig = require("./tsconfig.js");
 

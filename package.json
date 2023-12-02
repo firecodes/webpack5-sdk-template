@@ -2,7 +2,6 @@
   "name": "webpack-sdk",
   "version": "1.0.0",
   "description": "webpack sdk.",
-  "type": "commonjs",
   "main": "./dist-build-ts/index.js",
   "types": "./dist-build-ts/index.d.ts",
   "exports": {
@@ -28,14 +27,14 @@
     "build:examples": "rimraf dist-examples && gulp build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "build:js:sdk": "rimraf distjs/* && npm run build:sdk:dev && npm run build:sdk:prod",
+    "build:js:sdk": "rimraf distjs && npm run build:js:sdk:dev && npm run build:js:sdk:prod",
     "build:js:sdk:dev": "webpack --config ./build-js/webpack.config.js",
     "build:js:sdk:prod": "cross-env NODE_ENV=production webpack --config ./build-js/webpack.prod.js",
-    "build:ts:sdk": "rimraf distTs/* && npm run build:ts:sdk:dev && npm run build:ts:sdk:prod && npm run build:ts:sdk:all",
+    "build:ts:sdk": "rimraf distTs && npm run build:ts:sdk:dev && npm run build:ts:sdk:prod && npm run build:ts:sdk:all",
     "build:ts:sdk:dev": "webpack --config ./build-ts/webpack.config.js",
     "build:ts:sdk:prod": "cross-env NODE_ENV=production webpack --config ./build-ts/webpack.prod.js",
     "build:ts:sdk:all": "cross-env NODE_ENV=production webpack --config ./build-ts/webpack.prod.all.js "
- },
+  },
   "keywords": [
     "webpack",
     "webpack 5",

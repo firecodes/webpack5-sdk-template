@@ -2,7 +2,8 @@
 # http://eslint.cn/docs/user-guide/configuring
 
 
-build-node/
+
+build-js/
 build-ts/
 build/
 dist/
