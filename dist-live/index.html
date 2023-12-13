@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Basic Communication</title><link rel="stylesheet" href="./assets/common.css"/><link rel="icon" href="./favicon.png"><script defer="defer" src="./sdk.client.min.js"></script></head><body class="agora-theme"><div class="navbar-fixed"><nav class="agora-navbar"><div class="nav-wrapper agora-primary-bg valign-wrapper"><h5 class="left-align">Basic Communication</h5></div></nav></div><form id="form" class="row col l12 s12"><div class="row container col l12 s12"><div class="col" style="min-width: 433px; max-width: 443px"><div class="card" style="margin-top: 0px; margin-bottom: 0px;"><div class="row card-content" style="margin-bottom: 0px;"><div class="input-field"><label for="appID" class="active">App ID</label> <input placeholder="App ID" value="appID" name="appID"></div><div class="input-field"><label for="channel" class="active">Channel</label> <input placeholder="channel" value="channel" name="channel"></div><div class="input-field"><label for="token" class="active">Token</label> <input placeholder="token" value="token" name="token"></div><div class="input-field"><label for="UID" class="active">UID</label> <input type="number" placeholder="UID" value="11111" name="uid"></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button></div></div><div class="input-field"><label for="UID" class="active">mssage</label> <input placeholder="mssage" value="mssage122" name="mssage"></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="sdkMsg">Test Client Event</button></div></div></div></div><ul class="collapsible card agora-secondary-border" style="margin-top: .4rem; border: 1px"><li><div class="collapsible-header agora-secondary-bg"><h8 class="center-align">ADVANCED SETTINGS</h8></div><div class="collapsible-body card-content"><div class="row"><div class="col s12"><div class="input-field"><label for="cameraId" class="active">CAMERA</label> <select name="cameraId" id="cameraId"></select></div><div class="input-field"><label for="microphoneId" class="active">MICROPHONE</label> <select name="microphoneId" id="microphoneId"></select></div><div class="input-field"><label for="cameraResolution" class="active">CAMERA RESOLUTION</label> <select name="cameraResolution" id="cameraResolution"></select></div><div class="row col s12"><div class="row"><label for="mode" class="active">MODE</label></div><div class="row"><label><input type="radio" class="with-gap" name="mode" value="live" checked="checked"/> <span>live</span></label> <label><input type="radio" class="with-gap" name="mode" value="rtc"/> <span>rtc</span></label></div></div><div class="row col s12"><div class="row"><label for="codec" class="active">CODEC</label></div><div class="row"><label><input type="radio" class="with-gap" name="codec" value="h264" checked="checked"/> <span>h264</span></label> <label><input type="radio" class="with-gap" name="codec" value="vp8"/> <span>vp8</span></label></div></div></div></div></div></li></ul></div><div class="col s7"><div class="video-grid" id="video"><div class="video-view"><div id="local_stream" class="video-placeholder"></div><div id="local_video_info" class="video-profile hide"></div><div id="video_autoplay_local" class="autoplay-fallback hide"></div></div></div></div></div></form><script src="./vendor/jquery.min.js"></script><script src="./vendor/materialize.min.js"></script><script>// console.log("sdk version: " + GmRTC.VERSION + " compatible: " + GmRTC.checkSystemRequirements());
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Basic Communication</title><link rel="stylesheet" href="./assets/common.css"/><link rel="icon" href="./favicon.png"><script defer="defer" src="./sdk.client.min.js"></script></head><body class="sdk-gm-theme"><div class="navbar-fixed"><nav class="sdk-gm-navbar"><div class="nav-wrapper sdk-gm-primary-bg valign-wrapper"><h5 class="left-align">Basic Communication</h5></div></nav></div><form id="form" class="row col l12 s12"><div class="row container col l12 s12"><div class="col" style="min-width: 433px; max-width: 443px"><div class="card" style="margin-top: 0px; margin-bottom: 0px;"><div class="row card-content" style="margin-bottom: 0px;"><div class="input-field"><label for="appID" class="active">App ID</label> <input placeholder="App ID" value="appID" name="appID"></div><div class="input-field"><label for="channel" class="active">Channel</label> <input placeholder="channel" value="channel" name="channel"></div><div class="input-field"><label for="token" class="active">Token</label> <input placeholder="token" value="token" name="token"></div><div class="input-field"><label for="UID" class="active">UID</label> <input type="number" placeholder="UID" value="11111" name="uid"></div><div class="row col s12"><div class="row"><label for="codec" class="active">屏幕共享</label></div><div class="row"><label><input type="radio" class="with-gap" name="screen" value="1"/> <span>是</span></label> <label><input type="radio" class="with-gap" name="screen" value="0" checked="checked"/> <span>否</span></label></div></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button></div></div><div class="input-field"><label for="UID" class="active">mssage</label> <input placeholder="mssage" value="mssage122" name="mssage"></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="sdkMsg">Test Client Event</button></div></div></div></div><ul class="collapsible card sdk-gm-secondary-border" style="margin-top: .4rem; border: 1px"><li><div class="collapsible-header sdk-gm-secondary-bg"><h8 class="center-align">ADVANCED SETTINGS</h8></div><div class="collapsible-body card-content"><div class="row"><div class="col s12"><div class="input-field"><label for="cameraId" class="active">CAMERA</label> <select name="cameraId" id="cameraId"></select></div><div class="input-field"><label for="microphoneId" class="active">MICROPHONE</label> <select name="microphoneId" id="microphoneId"></select></div><div class="input-field"><label for="cameraResolution" class="active">CAMERA RESOLUTION</label> <select name="cameraResolution" id="cameraResolution"></select></div><div class="row col s12"><div class="row"><label for="mode" class="active">MODE</label></div><div class="row"><label><input type="radio" class="with-gap" name="mode" value="live" checked="checked"/> <span>live</span></label> <label><input type="radio" class="with-gap" name="mode" value="rtc"/> <span>rtc</span></label></div></div><div class="row col s12"><div class="row"><label for="codec" class="active">CODEC</label></div><div class="row"><label><input type="radio" class="with-gap" name="codec" value="h264" checked="checked"/> <span>h264</span></label> <label><input type="radio" class="with-gap" name="codec" value="vp8"/> <span>vp8</span></label></div></div></div></div></div></li></ul></div><div class="col s7"><div class="video-grid" id="video"><div class="video-view"><div id="local_stream" class="video-placeholder"></div><div id="local_video_info" class="video-profile hide"></div><div id="video_autoplay_local" class="autoplay-fallback hide"></div></div></div></div></div></form><script src="./vendor/jquery.min.js"></script><script src="./vendor/materialize.min.js"></script><script>// console.log("sdk version: " + GmRTC.VERSION + " compatible: " + GmRTC.checkSystemRequirements());
 
     var resolutions = [
       {
@@ -151,11 +151,10 @@
     }
 
     function handleEvents(rtc) {
-      // Occurs when an error message is reported and requires error handling.
       rtc.client.on("error", (err) => {
         console.log(err)
       })
-      // Occurs when the peer user leaves the channel; for example, the peer user calls Client.leave.
+    
       rtc.client.on("peer-leave", function (evt) {
         var id = evt.uid;
         console.log("id", evt)
@@ -171,12 +170,12 @@
         Toast.notice("peer leave")
         console.log("peer-leave", id)
       })
-      // Occurs when the local stream is published.
+     
       rtc.client.on("stream-published", function (evt) {
         Toast.notice("stream published success")
         console.log("stream-published")
       })
-      // Occurs when the remote stream is added.
+     
       rtc.client.on("stream-added", function (evt) {
         var remoteStream = evt.stream
         var id = remoteStream.getId()
@@ -188,7 +187,7 @@
         }
         console.log("stream-added remote-uid: ", id)
       })
-      // Occurs when a user subscribes to a remote stream.
+      
       rtc.client.on("stream-subscribed", function (evt) {
         var remoteStream = evt.stream
         var id = remoteStream.getId()
@@ -198,7 +197,7 @@
         Toast.info("stream-subscribed remote-uid: " + id)
         console.log("stream-subscribed remote-uid: ", id)
       })
-      // Occurs when the remote stream is removed; for example, a peer user calls Client.unpublish.
+   
       rtc.client.on("stream-removed", function (evt) {
         var remoteStream = evt.stream
         var id = remoteStream.getId()
@@ -259,7 +258,7 @@
             streamID: rtc.params.uid,
             audio: true,
             video: true,
-            screen: false,
+            screen: !Boolean(option.screen == 0),
             microphoneId: option.microphoneId,
             cameraId: option.cameraId
           })
@@ -318,7 +317,7 @@
         return
       }
       if (!rtc.published) {
-        Toast.error("Your didn't publish")
+        Toast.error("Your didn t publish")
         return
       }
       var oldState = rtc.published
@@ -370,9 +369,8 @@
       })
     }
 
-    // This function automatically executes when a document is ready.
+    
     $(function () {
-      // This will fetch all the devices and will populate the UI for every device. (Audio and Video)
       getDevices(function (devices) {
         devices.audios.forEach(function (audio) {
           $("<option/>", {
@@ -386,7 +384,6 @@
             text: video.name,
           }).appendTo("#cameraId")
         })
-        // To populate UI with different camera resolutions
         resolutions.forEach(function (resolution) {
           $("<option/>", {
             value: resolution.value,
@@ -398,16 +395,14 @@
 
       var fields = ["appID", "channel"]
 
-      // This will start the join functions with all the configuration selected by the user.
       $("#join").on("click", function (e) {
         console.log("join")
         e.preventDefault();
-        var params = serializeformData(); // Data is feteched and serilized from the form element.
+        var params = serializeformData(); 
         if (validator(params, fields)) {
           join(rtc, params)
         }
-      })
-      // This publishes the video feed to Agora
+      }) 
       $("#publish").on("click", function (e) {
         console.log("publish")
         e.preventDefault()
@@ -415,8 +410,7 @@
         if (validator(params, fields)) {
           publish(rtc)
         }
-      });
-      // Unpublishes the video feed from Agora
+      }); 
       $("#unpublish").on("click", function (e) {
         console.log("unpublish")
         e.preventDefault()
@@ -424,8 +418,7 @@
         if (validator(params, fields)) {
           unpublish(rtc)
         }
-      });
-      // Leeaves the chanenl if someone clicks the leave button
+      }); 
       $("#leave").on("click", function (e) {
         console.log("leave")
         e.preventDefault()
@@ -440,7 +433,7 @@
           return
         }
         console.log("sdkMsg")
-        var params = serializeformData(); // Data is feteched and serilized from the form element.
+        var params = serializeformData(); 
         rtc.client.sendClientMessage(params)
       })
 
