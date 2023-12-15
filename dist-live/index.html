@@ -69,7 +69,7 @@
 
     function mediaViewBtn(stream, dom) {
       dom.removeClass('hide')
-     var videoBtn = $("<button/>", {
+      var videoBtn = $("<button/>", {
         class: "btn btn-raised btn-primary waves-effect waves-light",
       }).text("视频关闭").click(function (e) {
         e.preventDefault()
@@ -356,7 +356,7 @@
         return
       }
       var oldState = rtc.published
-      rtc.client.unpublish(rtc.localStream,function(){
+      rtc.client.unpublish(rtc.localStream, function () {
         rtc.localStream.stop()
         $("#local_video_info").empty()
         Toast.info("unpublish")
@@ -382,7 +382,7 @@
         // stop stream
         if (rtc.localStream.isPlaying()) {
           rtc.localStream.stop()
-         $("#local_video_info").empty()
+          $("#local_video_info").empty()
         }
         // close stream
         rtc.localStream.close()
@@ -432,8 +432,14 @@
         M.AutoInit()
       })
 
-      var fields = ["host", "channel"]
+      function setFormDefalut() {
+        var uidDom = $("#form").find(`input[name="uid"]`)
+        let value = uidDom.val()
+        uidDom.val(value + parseInt(Math.random() * 10000000))
+      }
+      setFormDefalut()
 
+      var fields = ["host", "channel"]
       $("#join").on("click", function (e) {
         console.log("join")
         e.preventDefault();
