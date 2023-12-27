@@ -4470,6 +4470,9 @@ nav .input-field label.active i {
 
 .navbar-fixed nav {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background: #1E88E5 !important;
 }
 
 @media only screen and (min-width: 601px) {
@@ -9112,7 +9115,9 @@ html, body {
 .sdk-gm-theme .sdk-gm-primary-bg {
   color: #fff;
   background-color: #1E88E5 !important;
-  align-items: center; }
+  align-items: center; 
+  padding: 10px;
+}
 
 .sdk-gm-theme .card.container {
   margin-left: 20px; }

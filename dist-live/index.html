@@ -1,22 +1,10 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Basic Communication</title><link rel="stylesheet" href="./assets/common.css"/><link rel="icon" href="./favicon.png"><script defer="defer" src="./sdk.client.min.js"></script></head><body class="sdk-gm-theme"><div class="navbar-fixed"><nav class="sdk-gm-navbar"><div class="nav-wrapper sdk-gm-primary-bg valign-wrapper"><h5 class="left-align">Basic Communication</h5></div></nav></div><form id="form" class="row col l12 s12"><div class="row container col l12 s12"><div class="col" style="min-width: 433px; max-width: 443px"><div class="card" style="margin-top: 0px; margin-bottom: 0px;"><div class="row card-content" style="margin-bottom: 0px;"><div class="input-field"><label for="host" class="active">Host</label> <input placeholder="Host" value="192.168.100.224:4443" name="host"></div><div class="input-field"><label for="channel" class="active">Channel</label> <input placeholder="channel" value="channel" name="channel"></div><div class="input-field"><label for="token" class="active">Token</label> <input placeholder="token" value="token" name="token"></div><div class="input-field"><label for="UID" class="active">UID</label> <input type="number" placeholder="UID" value="5555555" name="uid"></div><div class="row col s12"><div class="row"><label for="codec" class="active">屏幕共享</label></div><div class="row"><label><input type="radio" class="with-gap" name="screen" value="1"/> <span>是</span></label> <label><input type="radio" class="with-gap" name="screen" value="0" checked="checked"/> <span>否</span></label></div></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button></div></div><div class="input-field" style="margin: 0px;margin-top: 20px;"><label for="UID" class="active">mssage</label> <input placeholder="mssage" value="mssage122" name="mssage"></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="sdkMsg">Test Client Event</button></div></div></div></div><ul class="collapsible card sdk-gm-secondary-border" style="margin-top: .4rem; border: 1px"><li><div class="collapsible-header sdk-gm-secondary-bg"><h8 class="center-align">ADVANCED SETTINGS</h8></div><div class="collapsible-body card-content"><div class="row"><div class="col s12"><div class="input-field"><label for="cameraId" class="active">CAMERA</label> <select name="cameraId" id="cameraId"></select></div><div class="input-field"><label for="microphoneId" class="active">MICROPHONE</label> <select name="microphoneId" id="microphoneId"></select></div><div class="input-field"><label for="cameraResolution" class="active">CAMERA RESOLUTION</label> <select name="cameraResolution" id="cameraResolution"></select></div><div class="row col s12"><div class="row"><label for="mode" class="active">MODE</label></div><div class="row"><label><input type="radio" class="with-gap" name="mode" value="live" checked="checked"/> <span>live</span></label> <label><input type="radio" class="with-gap" name="mode" value="rtc"/> <span>rtc</span></label></div></div><div class="row col s12"><div class="row"><label for="codec" class="active">CODEC</label></div><div class="row"><label><input type="radio" class="with-gap" name="codec" value="h264" checked="checked"/> <span>h264</span></label> <label><input type="radio" class="with-gap" name="codec" value="vp8"/> <span>vp8</span></label></div></div></div></div></div></li></ul></div><div class="col s7"><div class="video-grid" id="video"><div class="video-view"><div id="local_stream" class="video-placeholder"></div><div id="local_video_info" class="video-profile hide"></div><div id="video_autoplay_local" class="autoplay-fallback hide"></div></div></div></div></div></form><script src="./vendor/jquery.min.js"></script><script src="./vendor/materialize.min.js"></script><script>// console.log("sdk version: " + GmRTC.VERSION + " compatible: " + GmRTC.checkSystemRequirements());
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Basic Communication</title><link rel="stylesheet" href="./assets/common.css"/><link rel="icon" href="./favicon.png"><script defer="defer" src="./sdk.client.min.js"></script></head><body class="sdk-gm-theme"><div class="navbar-fixed"><nav class="sdk-gm-navbar"><div class="nav-wrapper sdk-gm-primary-bg valign-wrapper"><h5 class="left-align">Basic Communication</h5></div><div class="nav-wrapper sdk-gm-primary-bg valign-wrapper"><a href="./assets/live.png" target="_blank">效果图1</a> <a style="margin-left: 10px;" href="./assets/live2.png" target="_blank">效果图2</a></div></nav></div><form id="form" class="row col l12 s12"><div class="row container col l12 s12"><div class="col" style="min-width: 433px; max-width: 443px"><div class="card" style="margin-top: 0px; margin-bottom: 0px;"><div class="row card-content" style="margin-bottom: 0px;"><div class="input-field"><label for="host" class="active">Host</label> <input placeholder="Host" value="192.168.100.224:4443" name="host"></div><div class="input-field"><label for="channel" class="active">Channel</label> <input placeholder="channel" value="channel" name="channel"></div><div class="input-field"><label for="token" class="active">Token</label> <input placeholder="token" value="token" name="token"></div><div class="input-field"><label for="UID" class="active">UID</label> <input type="number" placeholder="UID" value="5555555" name="uid"></div><div class="row col s12"><div class="row"><label for="codec" class="active">屏幕共享</label></div><div class="row"><label><input type="radio" class="with-gap" name="screen" value="1"/> <span>是</span></label> <label><input type="radio" class="with-gap" name="screen" value="0" checked="checked"/> <span>否</span></label></div></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="join">JOIN</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="leave">LEAVE</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="publish">PUBLISH</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="unpublish">UNPUBLISH</button></div></div><div class="input-field" style="margin: 0px;margin-top: 20px;"><label for="UID" class="active">mssage</label> <input placeholder="mssage" value="mssage122" name="mssage"></div><div class="row" style="margin: 0"><div class="col s12"><button class="btn btn-raised btn-primary waves-effect waves-light" id="sdkMsg">Test Client Event</button> <button class="btn btn-raised btn-primary waves-effect waves-light" id="joinRoom">Join Room</button></div></div></div></div><ul class="collapsible card sdk-gm-secondary-border" style="margin-top: .4rem; border: 1px"><li><div class="collapsible-header sdk-gm-secondary-bg"><h8 class="center-align">ADVANCED SETTINGS</h8></div><div class="collapsible-body card-content"><div class="row"><div class="col s12"><div class="input-field"><label for="cameraId" class="active">CAMERA</label> <select name="cameraId" id="cameraId"></select></div><div class="input-field"><label for="microphoneId" class="active">MICROPHONE</label> <select name="microphoneId" id="microphoneId"></select></div><div class="input-field"><label for="cameraResolution" class="active">CAMERA RESOLUTION</label> <select name="cameraResolution" id="cameraResolution"></select></div><div class="row col s12"><div class="row"><label for="mode" class="active">MODE</label></div><div class="row"><label><input type="radio" class="with-gap" name="mode" value="live" checked="checked"/><span>live</span></label> <label><input type="radio" class="with-gap" name="mode" value="rtc"/> <span>rtc</span></label></div></div><div class="row col s12"><div class="row"><label for="codec" class="active">CODEC</label></div><div class="row"><label><input type="radio" class="with-gap" name="codec" value="h264" checked="checked"/> <span>h264</span></label> <label><input type="radio" class="with-gap" name="codec" value="vp8"/> <span>vp8</span></label></div></div><div class="row col s12"><div class="row"><label for="service" class="active">Service</label></div><div class="row"><label><input type="radio" class="with-gap" name="service" value="0" checked="checked"/> <span>Mediasoup</span></label> <label><input type="radio" class="with-gap" name="service" value="1"/><span>socket.io</span></label></div></div></div></div></div></li></ul></div><div class="col s7"><div class="video-grid" id="video"><div class="video-view"><div id="local_stream" class="video-placeholder"></div><div id="local_video_info" class="video-profile hide"></div><div id="video_autoplay_local" class="autoplay-fallback hide"></div></div></div></div></div></form><script src="./vendor/jquery.min.js"></script><script src="./vendor/materialize.min.js"></script><script>// console.log("sdk version: " + GmRTC.VERSION + " compatible: " + GmRTC.checkSystemRequirements());
 
     var resolutions = [
-      {
-        name: "default",
-        value: "default",
-      },
-      {
-        name: "480p",
-        value: "480p",
-      },
-      {
-        name: "720p",
-        value: "720p",
-      },
-      {
-        name: "1080p",
-        value: "1080p"
-      }
+      { name: "default", value: "default", },
+      { name: "480p", value: "480p", },
+      { name: "720p", value: "720p", },
+      { name: "1080p", value: "1080p" }
     ]
 
     function Toastify(options) {
@@ -25,22 +13,13 @@
 
     var Toast = {
       info: (msg) => {
-        Toastify({
-          text: msg,
-          classes: "info-toast"
-        })
+        Toastify({ text: msg, classes: "info-toast" })
       },
       notice: (msg) => {
-        Toastify({
-          text: msg,
-          classes: "notice-toast"
-        })
+        Toastify({ text: msg, classes: "notice-toast" })
       },
       error: (msg) => {
-        Toastify({
-          text: msg,
-          classes: "error-toast"
-        })
+        Toastify({ text: msg, classes: "error-toast" })
       }
     }
     function validator(formData, fields) {
@@ -269,7 +248,8 @@
         Toast.error("Your already joined")
         return;
       }
-      rtc.client = GmRTC.createClient({ mode: option.mode, codec: option.codec })
+      // { mode: option.mode, codec: option.codec, service: option.service } 
+      rtc.client = GmRTC.createClient(option)
 
       rtc.params = option
       handleEvents(rtc)
@@ -482,5 +462,15 @@
         var params = serializeformData();
         rtc.client.sendClientMessage(params)
       })
-
+      $("#joinRoom").on("click", function (e) {
+        e.preventDefault()
+        if (!rtc.client) {
+          Toast.error("Please Join Room First")
+          return
+        }
+        console.log("joinRoom")
+        var params = serializeformData();
+        rtc.client.joinRoom(params)
+      })
+      
     })</script></body></html>
