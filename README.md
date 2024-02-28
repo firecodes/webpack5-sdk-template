@@ -33,6 +33,15 @@ npm run build
 npm run build:sdk
 npm run build:ts:sdk
 ```
+## 页面展示
+
+- 直播1(mediasoup-server)
+
+![](public/assets/live.png)
+
+- 直播2(socket.io)
+
+![](public/assets/live2.png)
 
 ### 打包项目对比参考 (感谢)
 1.  https://github.com/versatica/mediasoup-demo
